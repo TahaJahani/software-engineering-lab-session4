@@ -84,14 +84,15 @@ public static long fibRec(int n){
 }
 ```
 ```java
-public static void temp() {
-    ArrayList a = new ArrayList();
-    for (int i = 0; i < 10000; i++)
-    {
-        for (int j = 0; j < 20000; j++) {
-            a.add(i + j);
-        }
+public static long fibDp(int n){
+    long res = 1;
+    long tmp1 = 1;
+    for (int i = 1; i < n; i++){
+        long tmp2 = res;
+        res += tmp1;
+        tmp1 = tmp2;
     }
+    return res;
 }
 ```
 در الگوریتم اول، تلاش می‌کنیم تا به صورت بازگشتی جمله‌ی n ام را محاسبه کنیم اما در الگوریتم دوم، با استفاده از _Dynamic Programming_ زمان اجرا را به طور قابل توجهی کاهش می‌دهیم.
